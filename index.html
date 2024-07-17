@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from isigntech.com/Vernon-Medical-Clinic/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Jul 2024 05:47:01 GMT -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>Vernon Medical Clinic</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="assets/img/Logo-2.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="d-flex align-items-center gap-3">
+        <div><i class="bi bi-telephone"></i> Tel : +1 8532070</div>
+
+      </div>
+      <div><i class="fa-solid fa-tty"></i> Fax : +1 8533692</div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <h1 class="logo me-auto">
+        <a href="index.html"><img src="assets/img/Logo-1.png" /></a>
+      </h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="#hero">Home</a></li>
+
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
+          <li><a class="nav-link scrollto " href="#services">Services</a></li>
+          <li class="dropdown border-none">
+            <a href="#"><span class="fw-bold">forms</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#" class="fw-bold">Expenses – Claim for Tax Relief - MED 1 Form</a></li>
+              <li><a href="#" class="fw-bold ">Claim form for Carer’s Allowance - CR1 Form</a></li>
+              <li><a href="#" class="fw-bold">Application form for Carer’s Benefit – CARB Form</a></li>
+              <li><a href="#" class="fw-bold">Driving License – Medical Report Form</a></li>
+              <li><a href="#" class="fw-bold">GP Visit Card - Over 70s</a></li>
+              <li><a href="#" class="fw-bold">GP Visit Card - Under 6s</a></li>
+              <li><a href="#" class="fw-bold">Medical Card Application - MC1 Form</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto fw-bold" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+
+      <a href="#appointment" class="appointment-btn scrollto fw-bold d-flex align-items-center"><img
+          src="./assets/img/calendar.gif" />&nbsp;&nbsp;Appointment</a>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <video autoplay muted loop id="hero-video">
+      <source src="assets/vid/medical.mp4" type="video/mp4" />
+    </video>
+
+    <div class="testimonial" id="testimonial1">
+      <div class="slide-container">
+        <div class="slide">
+          <h2>Welcome to Vernon Medical Clinic</h2>
+          <p>We provide primary care for all age groups to both medical card and private patients.</p>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial" id="testimonial2">
+      <div class="slide-container">
+        <div class="slide">
+          <h2>Expert Medical Services</h2>
+          <p>Our experienced staff ensures you get the best care possible.</p>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial" id="testimonial3">
+      <div class="slide-container">
+        <div class="slide">
+          <h2>Patient-Centered Approach</h2>
+          <p>Your health and well-being are our top priorities.</p>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial" id="testimonial4">
+      <div class="slide-container">
+        <div class="slide">
+          <h2>Contact Us</h2>
+          <p>Reach out to us for any queries or appointments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const testimonials = document.querySelectorAll('.testimonial');
+      let currentTestimonial = 0;
+
+      function showTestimonial(index) {
+        testimonials.forEach((testimonial, i) => {
+          testimonial.classList.remove('show', 'slide-in-left', 'slide-in-right', 'slide-out-left', 'slide-out-right');
+          if (i === index) {
+            if (index % 2 === 0) {
+              testimonial.classList.add('show', 'slide-in-left');
+            } else {
+              testimonial.classList.add('show', 'slide-in-right');
+            }
+          } else if (i === currentTestimonial) {
+            if (currentTestimonial % 2 === 0) {
+              testimonial.classList.add('slide-out-left');
+            } else {
+              testimonial.classList.add('slide-out-right');
+            }
+          }
+        });
+        currentTestimonial = index;
+      }
+
+      function nextTestimonial() {
+        const nextTestimonialIndex = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(nextTestimonialIndex);
+      }
+
+      setInterval(nextTestimonial, 5000);
+      showTestimonial(0);
+    });
+
+  </script>
+
+  <!-- End Hero -->
+  <main id="main">
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services appointments">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center align-items-center">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front align-items-center">
+                <p class="icon"><img src="assets/img/gif-transparent/privacy-policy-unscreen.gif" class="gif" /></p>
+                <h5><a href="#">New Patient Policy</a></h5>
+              </div>
+              <div class="flip-card-back back-card-one">
+                <p>Our practice welcomes new patients and is committed to providing high-quality care. Please refer to
+                  our new patient policy for detailed information on registration, initial consultations, and required
+                  documentation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front align-items-center">
+                <p class="icon"><img src="assets/img/gif-transparent/prescription-unscreen.gif" class="gif" /></p>
+                <h5><a href="#">Repeat Prescription</a></h5>
+              </div>
+              <div class="flip-card-back back-card-one">
+                <p>If a repeat prescription is required, it may be obtained by contacting the surgery. We aim to deal
+                  with repeat prescription requests within 48 hours. Please note medications do require regular review
+                  to ensure their greatest benefit.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front  align-items-center">
+                <p class="icon"><img src="assets/img/gif-transparent/results.gif" class="gif" /></p>
+                <h5><a href="#">Test Results</a></h5>
+              </div>
+              <div class="flip-card-back back-card-one">
+                <p>You will be contacted by text message with your results. Please contact the surgery if you have
+                  concerns.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front align-items-center">
+                <p class="icon"><img src="assets/img/gif-transparent/pill-bottle-unscreen.gif" class="gif" /></p>
+                <h5><a href="#">Book Flu & Covid vaccines</a></h5>
+              </div>
+              <div class="flip-card-back back-card-one">
+                <p>Book your Flu and COVID-19 vaccines with us today. Appointments are available and can be scheduled
+                  online or by calling our office.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Featured Services Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about services">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row align-items-center justify-content-md-between">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="assets/img/gallery/gallery-1.jpg" class="img-fluid rounded" alt="" />
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3 class="mb-3">
+              Welcome to Vernon Medical Clinic
+            </h3>
+            <p>We are a long-standing and well-established practice on Vernon Avenue, Clontarf, offers a comprehensive
+              range of GP and nursing services in a warm and welcoming environment. We provide ample parking, including
+              a designated wheelchair space, and a downstairs surgery specifically designed for disabled patients, which
+              can be requested when making an appointment.
+            </p>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center  d-flex bgTimings">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 icon-box mt-3" data-aos="zoom-in" data-aos-delay="100">
+              <div class="hours-div py-3">
+                <div class="icon mb-2"><i class="fas fa-hospital"></i></div>
+                <div>
+                  <p class="title mb-2 pb-2">Monday</p>
+                  <span>9:00 am - 1:00 pm<br>2:00 pm - 5:00 pm</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 icon-box mt-3" data-aos="zoom-in" data-aos-delay="100">
+              <div class="hours-div py-3">
+                <div class="icon mb-2"><i class="far fa-hospital"></i></div>
+                <div>
+                  <p class="title mb-2 pb-2">Tuesday</p>
+                  <span>9:00 am - 1:00 pm<br>2:00 pm - 5:00 pm</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 icon-box mt-3" data-aos="zoom-in" data-aos-delay="100">
+              <div class="hours-div py-3">
+                <div class="icon mb-2"><i class="fas fa-flask"></i></div>
+                <div>
+                  <p class="title mb-2 pb-2">Wednesday</p>
+                  <span>9:00 am - 1:00 pm<br>Closed</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 icon-box mt-3" data-aos="zoom-in" data-aos-delay="100">
+              <div class="hours-div py-3">
+                <div class="icon mb-2"><i class="fas fa-hospital"></i></div>
+                <div>
+                  <p class="title mb-2 pb-2">Thursday</p>
+                  <span>9:00 am - 1:00 pm<br>2:00 pm - 5:00 pm</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 icon-box mt-3" data-aos="zoom-in" data-aos-delay="100">
+              <div class="hours-div py-3">
+                <div class="icon mb-2"><i class="far fa-hospital"></i></div>
+                <div>
+                  <p class="title mb-2 pb-2">Friday</p>
+                  <span>9:00 am - 1:00 pm<br>2:00 pm - 5:00 pm</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 icon-box mt-3" data-aos="zoom-in" data-aos-delay="100">
+              <div class="hours-div py-3">
+                <div class="icon mb-2"><i class="fas fa-times"></i></div>
+                <div>
+                  <p class="title mb-2 pb-2">Saturday & Sunday</p>
+                  <span>Closed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- End About Us Section -->
+
+    <!-- ======= Doctors Section ======= -->
+    <section id="doctors" class="doctors section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Doctors</h2>
+        </div>
+
+        <div class="row justify-content-md-between">
+          <div class="row  justify-content-md-between pb-4">
+
+            <div class="col-lg-3" data-aos="fade-right">
+              <img src="assets/img/doctors/doctors-2.jpg" class="img-fluid doc-img" alt="Dr. Mary Ward" />
+              <h3 class="mb-3">
+                Dr. Mary Ward
+              </h3>
+              <div class="social">
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+              <div class="card-text">
+
+                <p>Dr. Mary Ward has a special interest in dermatology and women’s health.</p>
+
+              </div>
+            </div>
+
+            <div class="col-lg-3" data-aos="fade-up">
+              <img src="assets/img/doctors/doctors-2.jpg" class="img-fluid doc-img" alt="Dr. Mary Ward" />
+              <h3 class="mb-3">
+                Dr. Shields
+              </h3>
+              <div class="card-text">
+                <div class="social">
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <p style="overflow-y: scroll; height: 150px;">Dr Clare Shields attended Holy Faith Clontarf and
+                  completed her medical degree in Trinity College Dublin in 2011. She completed her internship in
+                  Tallaght Hospital before starting GP training on the Trinity College Dublin GP Training scheme. She
+                  worked in various practices before joining Vernon Medical Clinic in 2017. </br>Dr Shields has a
+                  special interest in Women's Health, Dermatology and Medical Education and holds diplomas in Obstetrics
+                  and Gynaecology, Dermatology and Geriatric Medicine. She is a GP Trainer for the Trinity College
+                  Dublin GP Training Programme and is also responsible for undergraduate medical students in the
+                  practice. </br>She lives locally with her husband Shane and their two children.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3" data-aos="fade-left">
+              <img src="assets/img/doctors/doctors-2.jpg" class="img-fluid doc-img" alt="Dr. Mary Ward" />
+              <h3 class="mb-3">
+                Ms. Gaye Keane
+              </h3>
+              <div class="social">
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+              <div class="card-text">
+                <p>Ms Gaye Keane, our practice nurse is actively involved in childhood vaccinations, flu and Covid
+                  vaccinations and cervical smear testing. She also performs all investigations for our Chronic Disease
+                  Management scheme. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services services">
+      <div class="container " data-aos="fade-up">
+        <div class="section-title">
+          <h2>Services</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-5 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><img src="./assets/img/services-gif/heartbeat.gif" /></div>
+            <h4 class="title">General Health</h4>
+            <p class="description">Blood testing</br>ECG</br>Blood pressure monitor</br>Well Woman check</br>Well Man
+              check </br>Ear syringing</br>Suture removal</br>Cervical smears</br>Nebulisation</p>
+          </div>
+          <div class="col-lg-3 col-md-5 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><img src="./assets/img/gif-transparent/syringe-unscreen.gif" /></div>
+            <h4 class="title">Vaccination</h4>
+            <p class="description">Flu and Covid vaccinations</br>Pneumonia vaccination</br>Pneumonia
+              vaccination</br>Travel vaccinations</br>Childhood vaccinations </br>Chicken pox vaccination</p>
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-5 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><img src="./assets/img/services-gif/inhaler.gif" /></div>
+            <h4 class="title">Chronic Disease Management Scheme</h4>
+            <p class="description">Available to medical card holders over the age of 18 who have a diagnosis
+              of</br>Asthma </br>COPD</br>Cardiovascular disease</br>Type 2 diabetes</br>Stroke</p>
+          </div>
+          <div class="col-lg-3 col-md-5 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><img src="./assets/img/services-gif/hair-cut.gif" /></div>
+            <h4 class="title">Women's health</h4>
+            <p class="description">Contraception</br>Implanon insertion and removal</br>STI screening</br>Fertility
+              investigations</br>Menopause</br>Breast health</br>Cervical smears</p>
+          </div>
+          <div class="col-lg-3 col-md-5 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><img src="./assets/img/services-gif/pakistani.gif" /></div>
+            <h4 class="title">Men's health</h4>
+            <p class="description">STI screening</br>Prostate screening</br>Well Man Check</p>
+          </div>
+          <div class="col-lg-3 col-md-5 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><img src="./assets/img/services-gif/ultrasound.gif" /></div>
+            <h4 class="title">Pregnancy Care</h4>
+            <p class="description">Antenatal care</br>Post partum care</p>
+          </div>
+          <div class="col-lg-3 col-md-5 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><img src="./assets/img/services-gif/baby.gif" /></div>
+            <h4 class="title">Child health</h4>
+            <p class="description">2 and 6 week baby checks</br>Childhood vaccinations</p>
+          </div>
+          <div class="col-lg-3 col-md-5 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><img src="./assets/img/services-gif/examination.gif" /></div>
+            <h4 class="title">Dermatology</h4>
+            <p class="description">Examination of moles and lesions with dermatoscope</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Services Section -->
+     
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title mt-0">
+          <h2>Fees</h2>
+        </div>
+        <div class="col-md-12">
+          <div class="section-title">
+            <h3>Service Prices</h3>
+          </div>
+          <div class="col-sm-12 d-flex">
+            <div class="col-sm-12 col-md-6 me-2">
+              <table class="table table-striped table-bordered">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">Services</th>
+                    <th scope="col">Price (€)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Consultation</td>
+                    <td>65</td>
+                  </tr>
+                  <tr>
+                    <td>Follow up Visit (within 14 days)</td>
+                    <td>40</td>
+                  </tr>
+                  <tr>
+                    <td>Family Visit</td>
+                    <td>85</td>
+                  </tr>
+                  <tr>
+                    <td>House Call</td>
+                    <td>70</td>
+                  </tr>
+                  <tr>
+                    <td>Blood Test</td>
+                    <td>40</td>
+                  </tr>
+                  <tr>
+                    <td>Pre-employment / Adoption medical</td>
+                    <td>70</td>
+                  </tr>
+                  <tr>
+                    <td>Private prescription</td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <td>Private work cert</td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <td>Injections</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>Driving License</td>
+                    <td>60</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-sm-12 col-md-6 ms-2">
+              <table class="table table-striped table-bordered">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">Services</th>
+                    <th scope="col">Price (€)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Cervical smear (age 25-60)</td>
+                    <td>Free</td>
+                  </tr>
+                  <tr>
+                    <td>Cervical smear (private)</td>
+                    <td>140</td>
+                  </tr>
+                  <tr>
+                    <td>Ear syringing</td>
+                    <td>60</td>
+                  </tr>
+                  <tr>
+                    <td>Suture removal</td>
+                    <td>30</td>
+                  </tr>
+                  <tr>
+                    <td>24 blood pressure monitor</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>Blood pressure check</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>ECG</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>Pregnancy testing</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>Shingles vaccine (2 doses required)</td>
+                    <td>220</td>
+                  </tr>
+                  <tr>
+                    <td>Chicken pox vaccine (2 doses required)</td>
+                    <td>65</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Pricing Section -->
+
+    <!-- ======= Appointment Section ======= -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Make an Appointment</h2>
+          <p>
+            We are delighted to now introduce an online booking platform for our patients!
+          </p>
+        </div>
+
+        <form action="https://isigntech.com/Vernon-Medical-Clinic/forms/appointment.php" method="post" role="form"
+          class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required />
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required />
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" required />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 form-group mt-3">
+              <input type="datetime" name="date" class="form-control datepicker" id="date"
+                placeholder="Appointment Date" required />
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="department" id="department" class="form-select">
+                <option value="">Select Department</option>
+                <option value="Department 1">Dermatology</option>
+                <option value="Department 2">Women's Health</option>
+                <option value="Department 3">Cervical smear campaign, travel vaccinations and childhood immunisations
+                </option>
+              </select>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="doctor" id="doctor" class="form-select">
+                <option value="">Select Doctor</option>
+                <option value="Doctor 1">Dr. Mary Ward</option>
+                <option value="Doctor 2">Dr. Clare Shields</option>
+                <option value="Doctor 3">Ms. Gaye Keane</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">
+              Your appointment request has been sent successfully. Thank you!
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="button">Make an Appointment</button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+    <!-- End Appointment Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Testimonials</h2>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  The care I received at Vernon Medical Clinic was exceptional. The staff was attentive, professional,
+                  and genuinely cared about my well-being. The facilities were clean and well-maintained, and I felt
+                  comfortable and secure throughout my visit. Highly recommend!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
+                <h3>Saul Goodman</h3>
+                <h4>Founder</h4>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I have been visiting Vernon Medical Clinic for years and have always received top-notch care. The
+                  doctors take the time to listen to my concerns and explain everything in detail. The appointment
+                  process is smooth, and I appreciate the personalized attention I receive every time.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  The team at Vernon Medical Clinic is outstanding! From the moment I walked in, I was treated with
+                  respect and kindness. The medical staff is highly knowledgeable and thorough. They made sure I
+                  understood my treatment options and followed up to ensure I was on the right track. A+ service!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Vernon Medical Clinic is my go-to place for all my healthcare needs. The environment is welcoming, and
+                  the staff is incredibly friendly and professional. I appreciate the convenience of their services and
+                  the high standard of care they consistently provide. I trust them with my health completely.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="" />
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I recently had my first visit to Vernon Medical Clinic, and I was very impressed. The doctors and
+                  nurses were not only experts in their field but also compassionate and patient. They took the time to
+                  answer all my questions and made me feel at ease. The clinic is well-organized and efficient. I highly
+                  recommend them to anyone seeking quality medical care.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="" />
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Testimonials Section -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery testBG">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Gallery</h2>
+        </div>
+
+        <div class="gallery-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="assets/img/gallery/gallery-1.jpg"><img
+                  src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="assets/img/gallery/gallery-2.jpg"><img
+                  src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="assets/img/gallery/gallery-3.jpg"><img
+                  src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="assets/img/gallery/gallery-4.jpg"><img
+                  src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="assets/img/gallery/gallery-5.jpg"><img
+                  src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="assets/img/gallery/gallery-6.jpg"><img
+                  src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="assets/img/gallery/gallery-7.jpg"><img
+                  src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="assets/img/gallery/gallery-8.jpg"><img
+                  src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt="" /></a>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Gallery Section -->
+
+    <!-- ======= Frequently Asked Questioins Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Frequently Asked Questioins</h2>
+        </div>
+
+        <ul class="faq-list">
+          <li>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">
+              How can I book my Flu and COVID-19 vaccines?
+              <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+            </div>
+            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                We are pleased to announce the availability of Flu and COVID-19 vaccines starting from the end of September to the beginning of October. We typically schedule two patients every 10 minutes and allocate 2-3 hour slots for bookings. Patients will receive a text message with a booking link, and the same link will be available on our website for convenient access.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">
+              Is the clinic accessible for disabled patients? <i class="bi bi-chevron-down icon-show"></i><i
+                class="bi bi-chevron-up icon-close"></i>
+            </div>
+            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Yes, our clinic is fully accessible for disabled patients. We have a designated disabled car parking
+                space and a downstairs surgery that can be specifically requested when making an appointment.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">
+              How will I receive my test results? <i class="bi bi-chevron-down icon-show"></i><i
+                class="bi bi-chevron-up icon-close"></i>
+            </div>
+            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Test results will be communicated via text message. Occasionally, a follow-up appointment may be necessary to discuss the results, and you will be contacted to arrange this.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">
+              How do I get a repeat prescription?
+              <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+            </div>
+            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                If a repeat prescription is required, it may be obtained by contacting the surgery. We aim to deal with repeat prescription requests within 48 hours. Please note medications do require regular review to ensure their greatest benefit. 
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq7" class="collapsed question">
+              What payment methods do you accept?
+              <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+            </div>
+            <div id="faq7" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                We accept cash, credit/debit cards, and health insurance (if applicable). Please check with our
+                reception for more details on insurance providers we partner with.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq8" class="collapsed question">
+              Do you accept walk-in patients?
+              <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+            </div>
+            <div id="faq8" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                We do accept walk-in patients, but we highly recommend booking an appointment in advance to ensure you
+                receive timely care.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- End Frequently Asked Questioins Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 order-1 order-md-1">
+            <iframe style="border: 0; width: 100%; height: 350px"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d148.80845360607321!2d-6.195441599139054!3d53.36231357681389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670fa728597f19%3A0x47b5b7885256f4be!2s69-49%20Vernon%20Ave%2C%20Clontarf%20East%2C%20Dublin%2C%20Ireland!5e0!3m2!1sen!2sin!4v1719921400792!5m2!1sen!2sin"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="col-12 col-md-6 order-2 order-md-2">
+            <form action="https://isigntech.com/Vernon-Medical-Clinic/forms/contact.php" method="post" role="form"
+              class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control border border-secondary rounded-pill" id="name"
+                    placeholder="Your Name" required="" />
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control border border-secondary rounded-pill" name="email" id="email"
+                    placeholder="Your Email" required="" />
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control border border-secondary rounded-pill" name="subject" id="subject"
+                  placeholder="Subject" required="" />
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control border border-secondary" name="message" rows="7" placeholder="Message"
+                  required=""></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center">
+                <button type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-4">
+        <div class="row justify-content-center">
+          <div class="col-md-4 align-items-center footer-cards">
+            <div class="info-box"><img src="./assets/img/gif-transparent/location.gif" />
+              <h3>Our Address</h3>
+              <p>Vernon Medical Clinic</p>
+              <p>67a Vernon Avenue
+                Clontarf Dublin 3</p>
+            </div>
+          </div>
+          <div class="col-md-4 footer-cards">
+            <div class="info-box"><img src="./assets/img/gif-transparent/call.gif" />
+              <h3>Call Us</h3>
+              <p>01 8532070<br />01 8533692</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End Contact Section -->
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Vernon Medical Clinic</span></strong>. All Rights Reserved
+      </div>
+      <!-- <div class="credits"> -->
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
+      <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      <!-- </div> -->
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center scroll-btn"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+
+<!-- Mirrored from isigntech.com/Vernon-Medical-Clinic/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Jul 2024 05:47:21 GMT -->
+
+</html>
