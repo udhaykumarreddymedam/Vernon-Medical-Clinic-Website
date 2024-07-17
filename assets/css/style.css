@@ -841,10 +841,17 @@ section {
   color: var(--primary);
 }
 
+.icon-boxes .hours-div .icons-1 i {
+  width: 120px;
+}
+
 .about .content p {
   text-align: justify;
 }
 
+.days {
+  color: var(--white);
+}
 .bgTimings {
   margin-top: 20px;
 }
@@ -897,35 +904,6 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Features
---------------------------------------------------------------*/
-.features .icon-box h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 5px 0 10px 60px;
-  color: var(--primary);
-}
-
-.features .icon-box i {
-  font-size: 48px;
-  float: left;
-  color: var(--primary);
-}
-
-.features .icon-box p {
-  font-size: 15px;
-  color: var(--gray);
-  margin-left: 60px;
-}
-
-.features .image {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 400px;
-}
-
-/*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
 .services .icon-box {
@@ -934,27 +912,22 @@ section {
 }
 
 .services .icon {
+  width: 100px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
   margin-bottom: 20px;
-  background: var(--white);
-  border-radius: 50%;
-  transition: 0.5s;
-  color: var(--primary);
   overflow: hidden;
-  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.15);
 }
 
-.services .icon i {
-  font-size: 36px;
-  line-height: 0;
+.services .icon h4 {
+  color: var(--gray);
 }
 
 .services .icon-box:hover .icon {
-  box-shadow: 0px 0 25px rgba(63, 187, 192, 0.3);
+  border: 2px solid var(--primary);
+  border-radius: 10%;
+  transition: 1ms;
 }
 
 .services .title {
@@ -971,9 +944,9 @@ section {
   transition: 0.3s;
 }
 
-.services .title a:hover {
+/* .services .title a:hover {
   color: var(--primary);
-}
+} */
 
 .about .hours-div span {
   color: white;
@@ -1452,7 +1425,7 @@ h4 {
 .info-box {
   border-radius: 10px;
   transition: 1s;
-  background: #009d8c;
+  background-color: #c3e7f1;
 }
 
 .contact .info-box img {
@@ -1460,12 +1433,12 @@ h4 {
   margin: auto;
   border-radius: 50%;
   padding: 8px;
-  border: 2px dotted #c5ebec;
+  border: 2px dotted var(--primary);
 }
 
 .contact .info-box h3 {
   font-size: 20px;
-  color: var(--white);
+  color: var(--primary);
   font-weight: 700;
   margin: 10px 0;
 }
@@ -1474,8 +1447,9 @@ h4 {
   padding: 0;
   line-height: 24px;
   font-size: 14px;
+  font-weight: 600;
   margin-bottom: 0;
-  color: var(--white);
+  color: var(--gray);
 }
 
 .contact .php-email-form {
@@ -1581,8 +1555,4 @@ h4 {
   text-align: center;
   padding: 20px;
   color: var(--white);
-}
-
-.footer-cards {
-  opacity: 0.9;
 }
