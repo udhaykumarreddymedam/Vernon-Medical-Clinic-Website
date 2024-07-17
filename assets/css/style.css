@@ -207,7 +207,7 @@ span {
   border: 2px solid var(--primary);
 }
 
-.appointment-btn:hover > .colorIcon {
+.appointment-btn:hover>.colorIcon {
   color: var(--white);
 }
 
@@ -267,7 +267,7 @@ span {
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover > a {
+.navbar li:hover>a {
   color: var(--primary);
   border-bottom: 2.5px solid var(--primary) !important;
 }
@@ -303,12 +303,12 @@ span {
 
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover > a {
+.navbar .dropdown ul li:hover>a {
   background-color: var(--primary);
   color: var(--white);
 }
 
-.navbar .dropdown:hover > ul {
+.navbar .dropdown:hover>ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -320,7 +320,7 @@ span {
   visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover > ul {
+.navbar .dropdown .dropdown:hover>ul {
   opacity: 1;
   top: 0;
   left: 100%;
@@ -332,7 +332,7 @@ span {
     left: -90%;
   }
 
-  .navbar .dropdown .dropdown:hover > ul {
+  .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
   }
 }
@@ -405,7 +405,7 @@ span {
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover > a {
+.navbar-mobile li:hover>a {
   color: var(--primary);
 }
 
@@ -436,11 +436,11 @@ span {
 
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover > a {
+.navbar-mobile .dropdown ul li:hover>a {
   color: var(--white);
 }
 
-.navbar-mobile .dropdown > .dropdown-active {
+.navbar-mobile .dropdown>.dropdown-active {
   display: block;
 }
 
@@ -841,93 +841,87 @@ section {
   color: var(--primary);
 }
 
-.icon-boxes .hours-div .icons-1 i {
-  width: 120px;
-}
-
 .about .content p {
   text-align: justify;
 }
 
-.days {
-  color: var(--white);
-}
-.bgTimings {
-  margin-top: 20px;
-}
-
-.card-text p {
-  text-align: justify;
-  margin-top: 5px;
+.schedule-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.about .hours-div {
-  background-color: var(--secondary);
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  border-color: 0.3s ease-in-out;
-  border-radius: 5px;
+.schedule-content {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
-.about .hours-div:hover {
-  background-color: var(--primary);
-  color: white;
-}
-
-#doctors h3 {
-  margin-top: 5px;
-  margin-bottom: 5px !important;
+.schedule-icon {
+  font-size: 2rem;
   color: var(--primary);
 }
 
-.about .hours-div {
-  border-right: 2px solid var(--primary);
+.schedule-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
 }
 
-.about .hours-div:last-child {
-  border-right: none;
+.schedule-box:hover .schedule-content {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10%;
 }
 
-.schedule {
-  padding: 5px;
+.schedule-box:hover .schedule-icon {
+  color: var(--white);
 }
 
-.day {
-  margin-bottom: 10px;
+.schedule-box:hover .schedule-title {
+  color: var(--white);
 }
 
-.day h5 {
-  margin-bottom: 2px;
+.schedule-box:hover span {
+  color: var(--white);
 }
 
-.about .content p:last-child {
-  margin-bottom: 0;
-}
 
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
-  margin-bottom: 20px;
+.service-container {
+  margin-top: 20px;
+}
+
+.service-box {
   text-align: center;
-}
-
-.services .icon {
-  width: 100px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 20px;
-  overflow: hidden;
 }
 
-.services .icon h4 {
+.service-icon {
+  margin-bottom: 15px;
+}
+
+.service-icon img {
+  max-width: 30%;
+  height: auto;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
   color: var(--gray);
 }
 
-.services .icon-box:hover .icon {
-  border: 2px solid var(--primary);
-  border-radius: 10%;
-  transition: 1ms;
+.service-description {
+  font-size: 1rem;
+  color: var(--gray);
 }
 
 .services .title {
@@ -939,37 +933,11 @@ section {
   padding-bottom: 15px;
 }
 
-.services .title a {
-  color: #444444;
-  transition: 0.3s;
-}
-
-/* .services .title a:hover {
-  color: var(--primary);
-} */
-
-.about .hours-div span {
-  color: white;
-}
-
-.services .title::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 2px;
-  background: #2e9ab6;
-  bottom: 0;
-  left: calc(50% - 25px);
-}
-
-.services .description {
-  line-height: 24px;
-  font-size: 14px;
-  font-family: var(--font-sans);
-  color: var(--black);
-  font-weight: 500;
-  opacity: 0.8;
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 2px dotted var(--secondary);
+  border-radius: 10%;
 }
 
 /*--------------------------------------------------------------
@@ -1000,7 +968,7 @@ section {
   font-weight: 600;
 }
 
-.appointment .php-email-form .error-message br + br {
+.appointment .php-email-form .error-message br+br {
   margin-top: 25px;
 }
 
@@ -1466,7 +1434,7 @@ h4 {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .php-email-form .error-message br+br {
   margin-top: 25px;
 }
 
