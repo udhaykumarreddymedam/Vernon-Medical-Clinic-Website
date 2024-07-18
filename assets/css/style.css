@@ -301,7 +301,9 @@ span {
   }
 
   .new {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 15px;
   }
 }
 
@@ -1056,9 +1058,10 @@ section {
 
 .para {
   font-style: italic;
-  margin: 0 15px 0 15px;
+  margin: 0 20px 0 20px;
   position: relative;
   border-radius: 6px;
+  text-align: justify;
 }
 
 .back-card-one {
@@ -1839,6 +1842,12 @@ h4 {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .contact .info-box {
+    height: 230px;
   }
 }
 
