@@ -1057,8 +1057,8 @@ section {
 }
 
 .para {
-  font-style: italic;
-  margin: 0 20px 0 20px;
+  font-style: normal;
+  margin: 0 10px 0 10px;
   position: relative;
   border-radius: 6px;
   text-align: justify;
