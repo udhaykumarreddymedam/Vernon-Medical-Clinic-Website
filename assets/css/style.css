@@ -267,12 +267,11 @@ span {
   position: absolute;
   display: flex;
   z-index: 10;
-  top:8px;
+  top: 8px;
   flex-direction: column;
   align-items: center;
   box-shadow: 9px 9px 9px -2px rgba(77, 200, 143, 0.72);
 }
-
 
 .card-line {
   width: 20px;
@@ -435,7 +434,6 @@ span {
   }
 }
 
-
 /* .btn-appoint {
   background-color: #bfe7f3;
   padding: 10px;
@@ -461,7 +459,7 @@ span {
 @media (max-width: 768px) {
   .appointment-btn {
     margin: 0 15px 0 0;
-    padding: 6px 15px;
+    padding: 6px 12px;
   }
 }
 
@@ -471,20 +469,44 @@ span {
     padding: 6px 15px;
   }
 }
-@media (max-width: 425px) {
-  .appointment-btn {
-    margin: 0 15px 0 0;
-    padding: 5px;
-    padding-left: 2px;
-  }
-}
-@media (max-width: 375px) {
-  .appointment-btn {
-    margin: 0 5px 0 0;
-  }
 
+@media (max-width: 425px) {
   .appointment-btn img {
     display: none;
+  }
+
+  .appointment-btn {
+    padding: 2px;
+    text-align: center;
+  }
+
+  .logo {
+    width: 130px;
+  }
+}
+
+@media (max-width: 375px) {
+  .appointment-btn img {
+    display: none;
+  }
+
+  .logo {
+    width: 130px;
+  }
+}
+
+@media (max-width: 320px) {
+  .appointment-btn img {
+    display: none;
+  }
+
+  .appointment-btn {
+    padding: 2px;
+    text-align: center;
+  }
+
+  .logo {
+    width: 110px;
   }
 }
 
@@ -904,7 +926,7 @@ section {
 
 .appointment {
   background: linear-gradient(rgba(20, 101, 163, 0.9), rgba(20, 101, 163, 0.9)),
-    url("https://t4.ftcdn.net/jpg/02/60/04/09/360_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg");
+    url("../img/womenai.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -1052,7 +1074,7 @@ section {
 
 .back-card-one {
   background: linear-gradient(rgba(20, 101, 163, 0.8), rgba(20, 101, 163, 0.8)),
-    url("https://t4.ftcdn.net/jpg/02/60/04/09/360_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg");
+    url("../img/womenai.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1230,11 +1252,13 @@ section {
     margin-left: 30px;
   }
 }
+
 @media (max-width: 576px) {
   .service-container {
     margin-left: 20px;
   }
 }
+
 @media (max-width: 425px) {
   .service-container {
     margin-left: 20px;
