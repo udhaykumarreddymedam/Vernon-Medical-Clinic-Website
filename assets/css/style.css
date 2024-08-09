@@ -165,7 +165,6 @@ span {
   color: black;
   padding: 4%;
   border-radius: 20px;
-  /* box-shadow: 8px 23px 50px #ccc; */
 }
 
 .appointment-btn {
@@ -1672,7 +1671,6 @@ section {
   background-color: transparent;
   height: 45px;
   text-align: center;
-  /* border: 1px solid var(--primary);                  */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1684,10 +1682,6 @@ section {
 .ui-datepicker .ui-datepicker-header {
   width: 100%;
   height: fit-content;
-  /* display: flex; */
-  /* justify-content: space-around; */
-  /* align-items: center;      */
-  /* gap: 5px; */
   padding: 0px;
 }
 
