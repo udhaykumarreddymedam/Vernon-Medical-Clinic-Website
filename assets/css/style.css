@@ -1496,8 +1496,8 @@ section {
 .appointment .php-email-form input,
 .appointment .php-email-form select {
   height: 55px;
-  background: rgba(199, 232, 255, 0.7);
-  border: 0;
+  /* background: rgba(199, 232, 255, 0.7); */
+  border: 1;
   border-radius: 8px;
   color: var(--black) !important;
   font-weight: 600;
@@ -1597,7 +1597,7 @@ section {
 
 .time-slots {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
   max-height: 275px;
   overflow-y: auto;
@@ -1739,6 +1739,10 @@ section {
 
 #dialog-emergency .ui-dialog-content {
   font-size: 16px;
+}
+
+.time-arrow{
+  margin-left: 85px;
 }
 
 .time-slot {

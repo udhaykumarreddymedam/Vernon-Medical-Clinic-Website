@@ -10,7 +10,7 @@
   <meta content="" name="keywords" />
 
   <!-- Favicons -->
-  <link href="assets/img/Logo-2.png" rel="icon" />
+  <link href="assets/img/icon.png" rel="icon" />
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
   <!-- Google Fonts -->
@@ -48,7 +48,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <h1 class="logo me-auto">
-        <a href="#index(1).html"><img src="assets/img/Logo-1.png" /></a>
+        <a href="#index(1).html"><img src="assets/img/Logo-3.png" /></a>
       </h1>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
@@ -76,7 +76,7 @@
       </nav>
       <!-- .navbar -->
 
-      <a href="#appointment" id="appointment-btn"
+      <a href="#appointment.html" id="appointment-btn"
         class="appointment-btn scrollto fw-bold d-flex align-items-center"><img
           src="./assets/img/calendar.gif" />&nbsp;&nbsp;Appointment</a>
     </div>
@@ -120,42 +120,6 @@
       </div>
     </div>
   </section>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const testimonials = document.querySelectorAll('.testimonial');
-      let currentTestimonial = 0;
-
-      function showTestimonial(index) {
-        testimonials.forEach((testimonial, i) => {
-          testimonial.classList.remove('show', 'slide-in-left', 'slide-in-right', 'slide-out-left', 'slide-out-right');
-          if (i === index) {
-            if (index % 2 === 0) {
-              testimonial.classList.add('show', 'slide-in-left');
-            } else {
-              testimonial.classList.add('show', 'slide-in-right');
-            }
-          } else if (i === currentTestimonial) {
-            if (currentTestimonial % 2 === 0) {
-              testimonial.classList.add('slide-out-left');
-            } else {
-              testimonial.classList.add('slide-out-right');
-            }
-          }
-        });
-        currentTestimonial = index;
-      }
-
-      function nextTestimonial() {
-        const nextTestimonialIndex = (currentTestimonial + 1) % testimonials.length;
-        showTestimonial(nextTestimonialIndex);
-      }
-
-      setInterval(nextTestimonial, 5000);
-      showTestimonial(0);
-    });
-
-  </script>
 
   <!-- End Hero -->
   <main id="main">
@@ -610,8 +574,6 @@
       </section>
       <!-- End Pricing Section -->
 
-
-
       <!-- ======= Testimonials Section ======= -->
       <section id="testimonials" class="testimonials">
         <div class="container" data-aos="fade-up">
@@ -908,17 +870,6 @@
             </div>
           </div>
 
-          <script>
-            document.getElementById('cbx2').addEventListener('change', function () {
-              var timeContainer = document.getElementById('time-container');
-              if (this.checked) {
-                timeContainer.style.display = 'flex';
-              } else {
-                timeContainer.style.display = 'none';
-              }
-            });
-          </script>
-
 
           <div class="child-checkbox">
             <div class="flex justify-content-md-between gap-3">
@@ -957,21 +908,28 @@
             </div>
 
             <div id="time-container" class="time-container col-md-12" style="display:none;">
-              <div class="calendar-container col-md-4">
+              <div class="calendar-container col-md-5">
+                <div class="mb-2">Choose your date:</div>
                 <div id="datepicker"></div>
               </div>
-              <div class="time-slots-container col-md-8">
-                <div class="time-slots-header">
-                  <div id="selected-date">Wednesday, November 30</div>
-                  <div class="d-flex flex-end">
-                    <div class="arrow" id="prev-day">&#9664;</div>
-                    <div class="arrow" id="next-day">&#9654;</div>
+              <div class="time-slots-container col-md-7">
+                <div class="time-slots-header w-100">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center col-md-12">
+                      <span>Choose your slot time:&nbsp;&nbsp;</span>
+                      <span id="selected-date"></span>
+                    </div>
+                    <div class="d-flex time-arrow">
+                      <div class="arrow" id="prev-day">&#9664;</div>
+                      <div class="arrow" id="next-day">&#9654;</div>
+                    </div>
                   </div>
                 </div>
                 <div class="time-slots">
-                  <!-- Time slots will be appended here -->
+                  Time slots will be appended here
                 </div>
               </div>
+
             </div>
 
             <div id="dialog-confirm" title="Booking Confirmation">
@@ -981,215 +939,6 @@
             <div id="dialog-emergency" title="Emergency Slot" style="display: none;">
               <p>This slot is for emergency patients not for online booking. Please try to book some other slot.</p>
             </div>
-
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-            <script>
-              $(document).ready(function () {
-                const $datepicker = $("#datepicker").datepicker({
-                  changeMonth: true,
-                  changeYear: true,
-                  showButtonPanel: false,
-                  onSelect: function (dateText) {
-                    const selectedDate = new Date(dateText);
-                    if (selectedDate.getDay() === 0 || selectedDate.getDay() === 6) {
-                      $('.time-slots').html('<div class="closed">Closed</div>');
-                    } else {
-                      updateSelectedDate(selectedDate);
-                      generateTimeSlots(selectedDate);
-                    }
-                  }
-                });
-
-                const $selectedDate = $("#selected-date");
-                const currentDate = new Date();
-
-                function updateSelectedDate(date) {
-                  $datepicker.datepicker("setDate", date);
-                  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                  $selectedDate.text(date.toLocaleDateString(undefined, options));
-                }
-
-                function changeDay(days) {
-                  const newDate = new Date($datepicker.datepicker("getDate"));
-                  newDate.setDate(newDate.getDate() + days);
-                  if (newDate.getDay() === 0 || newDate.getDay() === 6) {
-                    $('.time-slots').html('<div class="closed">Closed</div>');
-                  } else {
-                    updateSelectedDate(newDate);
-                    generateTimeSlots(newDate);
-                  }
-                }
-
-                $("#prev-day").click(function () {
-                  changeDay(-1);
-                });
-
-                $("#next-day").click(function () {
-                  changeDay(1);
-                });
-
-                function generateTimeSlots(date) {
-                  const timeSlotsContainer = $('.time-slots');
-                  timeSlotsContainer.empty();
-
-                  const slots = getSlotsForDate(date);
-
-                  slots.forEach(slot => {
-                    let slotClass = 'time-slot';
-                    if (slot.isEmergency) {
-                      slotClass += ' emergency';
-                    }
-
-                    const slotElement = $(`
-                      <div class="${slotClass}" data-time="${slot.time}">
-                          <span class="tick-mark"><i class="fas fa-check"></i></span>
-                          ${slot.time}
-                      </div>
-                    `);
-
-                    slotElement.on('click', function () {
-                      if ($(this).hasClass('booked')) {
-                        $("#dialog-booked").dialog({
-                          modal: true,
-                          dialogClass: 'custom-dialog no-header',
-                          open: function () {
-                            $(".ui-widget-overlay").bind("click", function () {
-                              $("#dialog-booked").dialog("close");
-                            });
-                          },
-                          buttons: {
-                            "Close": function () {
-                              $(this).dialog("close");
-                            }
-                          }
-                        });
-                      } else if ($(this).hasClass('emergency')) {
-                        $("#dialog-emergency").dialog({
-                          modal: true,
-                          dialogClass: 'custom-dialog no-header',
-                          open: function () {
-                            $(".ui-widget-overlay").bind("click", function () {
-                              $("#dialog-emergency").dialog("close");
-                            });
-                          },
-                          buttons: {
-                            "OK": function () {
-                              $(this).dialog("close");
-                            }
-                          }
-                        });
-                      } else {
-                        $("#dialog-confirm").dialog({
-                          modal: true,
-                          dialogClass: 'custom-dialog no-header',
-                          open: function () {
-                            $(".ui-widget-overlay").bind("click", function () {
-                              $("#dialog-confirm").dialog("close");
-                            });
-                          },
-                          buttons: {
-                            "Yes": function () {
-                              slotElement.addClass('booked')
-                                .find('.tick-mark').css('display', 'block');
-                              $(this).dialog("close");
-                            },
-                            "No": function () {
-                              $(this).dialog("close");
-                            }
-                          }
-                        });
-                      }
-                    });
-                    timeSlotsContainer.append(slotElement);
-                  });
-
-                  adjustSlotLayout();
-                }
-
-                function getSlotsForDate(date) {
-                  const slots = [];
-                  const dayOfWeek = date.getDay();
-
-                  if (dayOfWeek === 3) { // Wednesday
-                    let currentTime = new Date();
-                    currentTime.setHours(9, 0, 0, 0);
-
-                    while (currentTime.getHours() < 13) {
-                      slots.push({ time: formatTime(currentTime), isEmergency: isEmergencySlot(currentTime) });
-                      currentTime.setMinutes(currentTime.getMinutes() + 5);
-                    }
-                  } else {
-                    let currentTime = new Date();
-                    currentTime.setHours(9, 0, 0, 0);
-
-                    while (currentTime.getHours() < 13) {
-                      slots.push({ time: formatTime(currentTime), isEmergency: isEmergencySlot(currentTime) });
-                      currentTime.setMinutes(currentTime.getMinutes() + 5);
-                    }
-
-                    currentTime.setHours(14, 0, 0, 0);
-
-                    while (currentTime.getHours() < 17) {
-                      slots.push({ time: formatTime(currentTime), isEmergency: isEmergencySlot(currentTime) });
-                      currentTime.setMinutes(currentTime.getMinutes() + 5);
-                    }
-                  }
-
-                  return slots;
-                }
-
-                function isEmergencySlot(time) {
-                  const emergencyTimes = [
-                    { hours: 9, minutes: 30 },
-                    { hours: 10, minutes: 0 },
-                    { hours: 10, minutes: 30 },
-                    { hours: 11, minutes: 0 },
-                    { hours: 11, minutes: 30 },
-                    { hours: 12, minutes: 0 },
-                    { hours: 12, minutes: 30 },
-                    { hours: 14, minutes: 30 },
-                    { hours: 15, minutes: 0 },
-                    { hours: 15, minutes: 30 },
-                    { hours: 16, minutes: 0 },
-                    { hours: 16, minutes: 30 },
-                  ];
-                  return emergencyTimes.some(t =>
-                    t.hours === time.getHours() && t.minutes === time.getMinutes()
-                  );
-                }
-
-                function formatTime(date) {
-                  const hours = date.getHours();
-                  const minutes = date.getMinutes();
-                  const period = hours >= 12 ? 'PM' : 'AM';
-                  const formattedHours = hours % 12 || 12;
-                  const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-                  return `${formattedHours}:${formattedMinutes} ${period}`;
-                }
-
-                function adjustSlotLayout() {
-                  const timeSlotsContainer = $('.time-slots');
-                  const timeSlots = timeSlotsContainer.children('.time-slot');
-                  timeSlots.css({
-                    'flex': '1 1 calc(25% - 10px)',
-                    'text-align': 'center',
-                    'border-radius': '10px',
-                    'padding': '10px',
-                    'font-size': '14px',
-                    'display': 'flex',
-                    'align-items': 'center',
-                    'justify-content': 'center',
-                    'box-sizing': 'border-box'
-                  });
-                }
-
-                updateSelectedDate(currentDate);
-                generateTimeSlots(currentDate);
-              });
-            </script>
-
 
             <div class="checkbox-section align-items-center gap-2 row">
               <input type="checkbox" style="width: 18px;" id="aggreed"
@@ -1274,51 +1023,14 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6..min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
 
-
-    $(document).ready(function () {
-      $("#appointment-btn").click(function () {
-        $("#appointment").show();
-        $("#other-div").hide();
-        $("#hero").hide();
-      });
-      $('.nav-link').click(function () {
-        $("#appointment").hide();
-        $("#other-div").show();
-        $("#hero").show();
-      });
-      $('.child-checkbox input, .child-checkbox select').attr('disabled', true);
-      $(".enable-cb").change(function () {
-        if (this.checked) {
-          $(".child-checkbox input,.child-checkbox select").attr('disabled', false);
-          $('.btn-container').css('display', 'flex');
-        } else {
-          $(".child-checkbox input,.child-checkbox select").attr('disabled', true);
-          $('.btn-container').css('display', 'none');
-        }
-      });
-      $('#date-picker').click(function () {
-        $('.hours').show();
-      });
-      $("#book-appointment").click(function () {
-        $("#overlay").fadeIn();
-      });
-      $(".close").click(function () {
-        $("#overlay").fadeOut();
-      });
-      $(".overlay-inner").click(function (event) {
-        event.stopPropagation();
-      });
-      $("#cancel-btn").click(function () {
-        $('#submit-form')[0].reset();
-      })
-    });
-  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="assets/js/script.js"></script>
 
 </body>
 

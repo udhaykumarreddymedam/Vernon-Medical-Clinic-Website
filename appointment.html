@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from isigntech.com/Vernon-Medical-Clinic/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Jul 2024 05:47:01 GMT -->
-
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -12,7 +10,7 @@
   <meta content="" name="keywords" />
 
   <!-- Favicons -->
-  <link href="assets/img/Logo-2.png" rel="icon" />
+  <link href="assets/img/icon.png" rel="icon" />
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
   <!-- Google Fonts -->
@@ -31,30 +29,21 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/appointment.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet"/>
 </head>
 
 <body>
-  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
-      <div class="d-flex align-items-center gap-5">
-        <div><i class="bi bi-telephone"></i> Tel : +1 8532070&nbsp;&nbsp;&nbsp;</div>
-      </div>
-      <div><i class="fa-solid fa-tty"></i> Fax : +1 8533692</div>
-    </div>
-  </div>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <h1 class="logo me-auto">
-        <a href="index.html"><img src="assets/img/Logo-1.png" /></a>
+        <a href="index.html"><img src="assets/img/Logo-3.png" /></a>
       </h1>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="#hero">Home</a></li>
 
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
@@ -75,7 +64,6 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
-      <!-- .navbar -->
 
       <a href="appointment.html" class="appointment-btn scrollto fw-bold d-flex align-items-center"><img
           src="./assets/img/calendar.gif" />&nbsp;&nbsp;Appointment</a>
@@ -83,96 +71,160 @@
   </header>
   <!-- End Header -->
 
-  
-  <main id="main">
-        <!-- ======= Appointment Section ======= -->
-        <section id="appointment" class="appointment section-bg">
-            <div class="container" data-aos="fade-up">
-              <div class="section-title">
-                <h2>Request Appointment</h2>
-                <p>
-                  We are delighted to now introduce an online booking platform for our patients!
-                </p>
-              </div>
-      
-              <form action="https://isigntech.com/Vernon-Medical-Clinic/forms/appointment.php" method="post" role="form"
-                class="php-email-form" data-aos="fade-up" data-aos-delay="100">
-                <div class="row">
-                  <div class="col-md-4 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required />
-                  </div>
-                  <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required />
-                  </div>
-                  <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" required />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 form-group mt-3">
-                    <input type="datetime" name="date" class="form-control datepicker" id="date"
-                      placeholder="Appointment Date" required />
-                  </div>
-                  <div class="col-md-4 form-group mt-3">
-                    <select name="department" id="department" class="form-select">
-                      <option value="">Type of Service required</option>
-                      <option value="Department 1">Dermatology</option>
-                      <option value="Department 2">Women's Health</option>
-                      <option value="Department 3">Cervical smear campaign, travel vaccinations and childhood immunisations
-                      </option>
-                    </select>
-                  </div>
-                  <div class="col-md-4 form-group mt-3">
-                    <select name="doctor" id="doctor" class="form-select">
-                      <option value="">Select Doctor</option>
-                      <option value="Doctor 1">Dr. Mary Ward</option>
-                      <option value="Doctor 2">Dr. Clare Shields</option>
-                      <option value="Doctor 3">Ms. Gaye Keane</option>
-                    </select>
-                  </div>
-                </div>
-      
-                <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
-                </div>
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">
-                    Your appointment request has been sent successfully. Thank you!
-                  </div>
-                </div>
-      
-                <div class="btn-container mx-auto">
-                  <div class="left-side">
-                    <div class="card">
-                      <div class="card-line"></div>
-                      <div class="buttons"></div>
-                    </div>
-                    <div class="post">
-                      <div class="post-line"></div>
-                      <div class="screen">
-                        <div class="dollar">€</div>
-                      </div>
-                      <div class="numbers"></div>
-                      <div class="numbers-line2"></div>
-                    </div>
-                  </div>
-                  <div class="right-side">
-                    <div class="new">REQUEST APPOINTMENT</div>
-                  </div>
-                </div>
-      
-      
-                <!-- <div class="text-center">
-                  <button class="btn-appoint">Make an Appointment</button>
-                </div> -->
-      
-              </form>
+
+  <!-- <main id="main"> -->
+    <!-- ======= Appointment Section ======= -->
+    <section id="appointment" class="appointment section-bg" style="display: none;">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Request Appointment</h2>
+        </div>
+        <form action="https://isigntech.com/Vernon-Medical-Clinic/forms/appointment.php" method="post" role="form"
+          class="php-email-form" id="submit-form" data-aos="fade-up" data-aos-delay="100">
+          <h6 class="p-3 rounded alert alert-danger">*Only registered Vernon Medical Clinic patients aged 60+ can book.
+            Unregistered patients appointments will be canceled and no vaccine will be given.</h6>
+
+          <div class="row my-1 p-2 align-items-center">
+            <div class="col-auto d-flex align-items-center">
+              <input type="checkbox" name="name" class="enable-cb" id="cbx2" style="display: none;" required>
+              <label for="cbx2" class="check d-flex align-items-center">
+                <svg width="18px" height="18px" viewBox="0 0 18 18">
+                  <path
+                    d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                  </path>
+                  <polyline points="1 9 7 14 15 4"></polyline>
+                </svg>
+              </label>
             </div>
-          </section>
-          <!-- End Appointment Section -->      
-  </main>
+            <div class="col-auto">
+              <span class="fs-6">Are you a registered patient at Vernon Medical Clinic?</span>
+            </div>
+          </div>
+
+          <div class="child-checkbox">
+            <div class="flex justify-content-md-between gap-3">
+              <label class="col-md-4 bg-none" id="">
+                <input class="form-control input" name="name" type="text" placeholder="" required />
+                <span>First Name</span>
+              </label>
+              <label class="col-md-4" id="">
+                <input class="form-control input" name="name" type="text" placeholder="" required />
+                <span>Last Name</span>
+              </label>
+              <label class="col-md-4 mt-3 mt-md-0">
+                <input class="form-control input" type="email" name="email" id="email" placeholder="" required />
+                <span>Email</span>
+              </label>
+            </div>
+            <div class="flex justify-content-md-between gap-3">
+              <label class="col-md-4 mt-3">
+                <input class="form-control input" type="tel" name="phone" id="phone" placeholder="" required />
+                <span>Phone No.</span>
+              </label>
+              <div class="col-md-4 mt-3">
+                <select name="department" id="department" class="form-select">
+                  <option value="">Vaccination Type&nbsp;&nbsp;<span><i class="fa-solid fa-caret-down"></i></span>
+                  </option>
+                  <option value="Department 1">Flu and Covid Vaccines</option>
+                  <option value="Department 2">Flu Vaccine Only</option>
+                  <option value="Department 3">Covid Vaccine Only
+                  </option>
+                </select>
+              </div>
+              <label class="col-md-4 mt-3">
+                <input class="form-control input" type="text" name="text" placeholder="" required />
+                <span>Description</span>
+              </label>
+            </div>
+
+            <div id="time-container" class="time-container col-md-12" style="display:none;">
+              <div class="calendar-container col-md-5">
+                <div id="datepicker"></div>
+              </div>
+              <div class="time-slots-container col-md-7">
+                <div class="time-slots-header w-100">
+                  <div class="d-flex row">
+                    <span>Choose your slot time:</span>
+                    <span id="selected-date"></span>
+                  </div>
+                  <div class="d-flex flex-end">
+                    <div class="arrow" id="prev-day">&#9664;</div>
+                    <div class="arrow" id="next-day">&#9654;</div>
+                  </div>
+                </div>
+                <div class="time-slots">
+                  <!-- Time slots will be appended here -->
+                </div>
+              </div>
+            </div>
+
+            <div id="dialog-confirm" title="Booking Confirmation">
+              <p>Do you like to book this time slot for your doctor appointment?</p>
+            </div>
+
+            <div id="dialog-emergency" title="Emergency Slot" style="display: none;">
+              <p>This slot is for emergency patients not for online booking. Please try to book some other slot.</p>
+            </div>
+
+            <div class="checkbox-section align-items-center gap-2 row">
+              <input type="checkbox" style="width: 18px;" id="aggreed"
+                placeholder="The above data entered is accurate and correct" required />
+              I hereby declare that the above information provided is true and correct.
+            </div>
+          </div>
+
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">
+              Your appointment request has been sent successfully. Thank you!
+            </div>
+          </div>
+          <div class="btn-container mx-auto align-items-center" id="book-appointment" style="display:none;">
+            <div class="left-side">
+              <div class="card">
+                <div class="card-line"></div>
+                <div class="buttons"></div>
+              </div>
+              <div class="post">
+                <div class="post-line"></div>
+                <div class="screen">
+                  <div class="dollar">€</div>
+                </div>
+                <div class="numbers"></div>
+                <div class="numbers-line2"></div>
+              </div>
+            </div>
+            <div class="right-side">
+              <div class="new">REQUEST APPOINTMENT</div>
+            </div>
+          </div>
+
+          <div id="overlay" class="close">
+            <div class="flex">
+              <div class="overlay-inner">
+                <p>Are you sure you want to book an appointment? please verify entered details:</p>
+                <div>Patient of Vernon medicals: yes <br>
+                  First Name: Abcd<br>
+                  Last Name: Abcd<br>
+                  Email Address: Abcd@gmail.com<br>
+                  phone number: 1234567890<br>
+                  Vaccination Type: Flu & Covid Vaccine<br>
+                  Appointment Date: 5/Sep/2024
+                  Appointment Time: 9:20<br> </div>
+                <div class="d-flex">
+                  <button id="submit-btn" class="close" type=button>Submit</button>
+                  <button id="cancel-btn" class="close" type=button>Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </section>
+    <!-- End Appointment Section -->
+  <!-- </main> -->
   <!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -180,20 +232,13 @@
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>Vernon Medical Clinic</span></strong>. All Rights Reserved.
-      <!-- </br>Designed By <strong>iSignTech</strong> -->
+        <!-- </br>Designed By <strong>iSignTech</strong> -->
       </div>
-      <!-- <div class="credits"> -->
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
-      <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-      <!-- </div> -->
     </div>
   </footer>
   <!-- End Footer -->
 
-  <div id="preloader"></div>
+  <!-- <div id="preloader"></div> -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center scroll-btn"><i
       class="bi bi-arrow-up-short"></i></a>
 
@@ -206,9 +251,10 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- <script src="assets/js/main.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
-
-<!-- Mirrored from isigntech.com/Vernon-Medical-Clinic/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Jul 2024 05:47:21 GMT -->
 
 </html>
