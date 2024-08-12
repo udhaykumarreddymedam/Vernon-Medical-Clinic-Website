@@ -916,19 +916,20 @@
                 <div class="time-slots-header w-100">
                   <div class="d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center col-md-12">
-                      <span>Choose your slot time:&nbsp;&nbsp;</span>
-                      <span id="selected-date"></span>
-                    </div>
-                    <div class="d-flex time-arrow">
-                      <div class="arrow" id="prev-day">&#9664;</div>
-                      <div class="arrow" id="next-day">&#9654;</div>
+                      <span>Choose your time slots:&nbsp;&nbsp;</span>
+                      <span id="selected-date" class="fw-bold"></span>
                     </div>
                   </div>
                 </div>
                 <div class="time-slots">
-                  Time slots will be appended here
+                  <div id="no-slots-message" class="inactive-time-slots">
+                    Please select a date to view available time slots.
+                </div>
+                <!-- Time slots will be appended here -->
+        
                 </div>
               </div>
+              
 
             </div>
 
@@ -936,9 +937,9 @@
               <p>Do you like to book this time slot for your doctor appointment?</p>
             </div>
 
-            <div id="dialog-emergency" title="Emergency Slot" style="display: none;">
-              <p>This slot is for emergency patients not for online booking. Please try to book some other slot.</p>
-            </div>
+            <div id="dialog-booked" title="Slot Already Booked" style="display:none;">
+              <p>This time slot is already booked.</p>
+          </div>
 
             <div class="checkbox-section align-items-center gap-2 row">
               <input type="checkbox" style="width: 18px;" id="aggreed"

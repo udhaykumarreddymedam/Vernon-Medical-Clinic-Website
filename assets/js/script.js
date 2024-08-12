@@ -3,20 +3,23 @@ $(document).ready(function () {
     changeMonth: true,
     changeYear: true,
     showButtonPanel: false,
+    minDate: 0,
+    maxDate: "+14D",
+    beforeShowDay: function (date) {
+      const today = new Date();
+      return [date >= today, ""];
+    },
     onSelect: function (dateText) {
       const selectedDate = new Date(dateText);
-      if (selectedDate.getDay() === 0 || selectedDate.getDay() === 6) {
-        $('.time-slots').html('<div class="closed">Closed</div>');
-      } else {
-        updateSelectedDate(selectedDate);
-        generateTimeSlots(selectedDate);
-      }
+      updateSelectedDate(selectedDate);
+      generateTimeSlots(selectedDate);
     }
   });
 
-
   const $selectedDate = $("#selected-date");
-  const currentDate = new Date();
+  const today = new Date();
+  const minDate = $datepicker.datepicker("option", "minDate");
+  const maxDate = $datepicker.datepicker("option", "maxDate");
 
   function updateSelectedDate(date) {
     $datepicker.datepicker("setDate", date);
@@ -24,98 +27,86 @@ $(document).ready(function () {
     $selectedDate.text(date.toLocaleDateString(undefined, options));
   }
 
-  function changeDay(days) {
-    const newDate = new Date($datepicker.datepicker("getDate"));
-    newDate.setDate(newDate.getDate() + days);
-    if (newDate.getDay() === 0 || newDate.getDay() === 6) {
-      $('.time-slots').html('<div class="closed">Closed</div>');
-    } else {
-      updateSelectedDate(newDate);
-      generateTimeSlots(newDate);
-    }
-  }
-
-  $("#prev-day").click(function () {
-    changeDay(-1);
-  });
-
-  $("#next-day").click(function () {
-    changeDay(1);
-  });
-
   function generateTimeSlots(date) {
     const timeSlotsContainer = $('.time-slots');
+    const noSlotsMessage = $('#no-slots-message');
     timeSlotsContainer.empty();
 
+    const dayOfWeek = date.getDay();
+
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+      noSlotsMessage.text("The clinic is closed on Saturdays and Sundays.").show();
+      timeSlotsContainer.html('<div class="closed">Closed</div>');
+      return;
+    }
+
     const slots = getSlotsForDate(date);
+    if (slots.length === 0) {
+      noSlotsMessage.text("No slots available for the selected date.").show();
+      return;
+    }
+
+    noSlotsMessage.hide(); 
 
     slots.forEach(slot => {
-      let slotClass = 'time-slot';
-      if (slot.isEmergency) {
-        slotClass += ' emergency';
-      }
+      if (!slot.isEmergency) {  // Hide emergency slots
+        let slotClass = 'time-slot';
+        const slotElement = $(`
+          <div class="${slotClass}" data-time="${slot.time}">
+            ${slot.time}
+          </div>
+        `);
 
-      const slotElement = $(`
-    <div class="${slotClass}" data-time="${slot.time}">
-        <span class="tick-mark"><i class="fas fa-check"></i></span>
-        ${slot.time}
-    </div>
-    `);
+        slotElement.on('click', function () {
+          var $this = $(this);
 
-      slotElement.on('click', function () {
-        if ($(this).hasClass('booked')) {
-          $("#dialog-booked").dialog({
-            modal: true,
-            dialogClass: 'custom-dialog no-header',
-            open: function () {
-              $(".ui-widget-overlay").bind("click", function () {
-                $("#dialog-booked").dialog("close");
-              });
-            },
-            buttons: {
-              "Close": function () {
-                $(this).dialog("close");
-              }
-            }
-          });
-        } else if ($(this).hasClass('emergency')) {
-          $("#dialog-emergency").dialog({
-            modal: true,
-            dialogClass: 'custom-dialog no-header',
-            open: function () {
-              $(".ui-widget-overlay").bind("click", function () {
-                $("#dialog-emergency").dialog("close");
-              });
-            },
-            buttons: {
-              "OK": function () {
-                $(this).dialog("close");
-              }
-            }
-          });
-        } else {
-          $("#dialog-confirm").dialog({
-            modal: true,
-            dialogClass: 'custom-dialog no-header',
-            open: function () {
-              $(".ui-widget-overlay").bind("click", function () {
-                $("#dialog-confirm").dialog("close");
-              });
-            },
-            buttons: {
-              "Yes": function () {
-                slotElement.addClass('booked')
-                  .find('.tick-mark').css('display', 'block');
-                $(this).dialog("close");
+          if ($this.hasClass('booked')) {
+            $("#dialog-booked").dialog({
+              modal: true,
+              dialogClass: 'custom-dialog no-header',
+              open: function () {
+                $(".ui-widget-overlay").on("click", function () {
+                  $("#dialog-booked").dialog("close");
+                });
               },
-              "No": function () {
-                $(this).dialog("close");
+              buttons: {
+                "Close": function () {
+                  $(this).dialog("close");
+                }
               }
-            }
-          });
-        }
-      });
-      timeSlotsContainer.append(slotElement);
+            });
+          } else {
+            $("#dialog-confirm").dialog({
+              modal: true,
+              dialogClass: 'custom-dialog no-header',
+              open: function () {
+                $(".ui-widget-overlay").on("click", function () {
+                  $("#dialog-confirm").dialog("close");
+                });
+              },
+              buttons: {
+                "Yes": function () {
+                  $this.addClass('booked'); // Mark slot as booked
+                  $(this).dialog("close");
+                },
+                "No": function () {
+                  $(this).dialog("close");
+                }
+              }
+            });
+          }
+        });
+
+        slotElement.hover(function () {
+          if ($(this).hasClass('booked')) {
+            $(this).append('<span class="disabled-icon"><i class="fas fa-ban" style="color: red;"></i></span>');
+          }
+        }, function () {
+          $(this).find('.disabled-icon').remove();
+        });
+
+        timeSlotsContainer.append(slotElement);
+      }
     });
 
     adjustSlotLayout();
@@ -170,13 +161,15 @@ $(document).ready(function () {
       'display': 'flex',
       'align-items': 'center',
       'justify-content': 'center',
-      'box-sizing': 'border-box'
+      'box-sizing': 'border-box',
+      'position': 'relative',
+      'margin': '5px'
     });
   }
 
-  updateSelectedDate(currentDate);
-  generateTimeSlots(currentDate);
+  $('#no-slots-message').show(); 
 });
+
 
 
 // calendar-container

@@ -1586,6 +1586,10 @@ section {
   justify-content: center;
 }
 
+.arrow {
+  display: none; 
+}
+
 .closed {
   max-width: 700px;
   text-align: center;
@@ -1603,9 +1607,18 @@ section {
   overflow-y: auto;
   padding-top: 10px;
   width: 100%;
+  flex-wrap: wrap;
+}
+
+.inactive-time-slots {
+    font-size: 14px;
+    color: #999;
+    width: 100%;
+    text-align: center;
 }
 
 .time-slot {
+  position: relative;
   padding: 10px;
   border: 2px solid var(--primary);
   border-radius: 10px;
@@ -1622,16 +1635,9 @@ section {
 .time-slot.booked {
   background-color: lightgray !important;
   color: var(--gray) !important;
-  border: 2px solid var(--primary) !important;
+  border: 2px solid var(--gray) !important;
   text-align: center;
   border-radius: 10px;
-}
-
-.time-slot.emergency {
-  background-color: red;
-  border: none;
-  color: white;
-  cursor: not-allowed;
 }
 
 @media (max-width: 600px) {
@@ -1669,14 +1675,14 @@ section {
 .ui-datepicker .ui-datepicker-header select.ui-datepicker-month,
 .ui-datepicker .ui-datepicker-header select.ui-datepicker-year {
   background-color: transparent;
-  height: 45px;
+  height: 50px;
   text-align: center;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   padding: 0px;
-  margin-right: 0;
   font-size: 14px;
+  border: none;
 }
 
 .ui-datepicker .ui-datepicker-header {
@@ -1741,31 +1747,28 @@ section {
   font-size: 16px;
 }
 
-.time-arrow{
-  margin-left: 85px;
-}
-
-.time-slot {
-  position: relative;
-}
-
-.tick-mark {
+.disabled-icon {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  top: -8px;
-  right: -8px;
-  background-color: green;
-  padding: 2px;
-  border-radius: 10px;
-  font-size: 12px;
-  color: var(--white);
-  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  font-size: 30px;
+  color: red;
+  background-color: transparent;
+  z-index: 10;
 }
 
-.time-slot.booked .tick-mark {
-  display: block;
+.inactive-time-slots {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: lightslategrey;
 }
+
 
 /*--------------------------------------------------------------
 # Testimonials
